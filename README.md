@@ -1,0 +1,2 @@
+# bot-invite-website
+Botリストのwebサイトのhtml
