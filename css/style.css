@@ -1,0 +1,217 @@
+@charset "utf-8";
+
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+html,body {height: 100%;}
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #333;	/*全体の文字色*/
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 16px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+	background: #f0f0f0;	/*背景色*/
+	-webkit-text-size-adjust: none;
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+ul {list-style-type: none;}
+ol {padding-left: 40px;padding-bottom: 15px;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+iframe {width: 100%;}
+
+@keyframes opa1 {
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #333;		/*リンクテキストの色*/
+	transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+}
+a:hover {
+	color: #ff4765;			/*マウスオン時の文字色*/
+	text-decoration: none;	/*マウスオン時に下線を消す設定。残したいならこの１行削除。*/
+}
+
+/*ヘッダー（一番上の、ロゴやメニューが入っているブロック）
+---------------------------------------------------------------------------*/
+header {
+	height: 100%;
+	overflow: auto;
+	position: relative;
+	background: url(../images/background.jpg) no-repeat center center / cover;	/*背景画像の読み込み*/
+}
+/*ロゴ画像*/
+header #logo img {
+	display: block;
+	width: 20%;	/*画像の幅*/
+	position: absolute;
+	left: 40%;		/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
+	bottom: 50%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
+}
+
+/*メニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック全体への指定*/
+#menubar {
+	position: absolute;
+	bottom: 20%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
+	left: 0px;
+	width: 100%;
+	text-align: center;
+}
+/*メニュー１個あたりの指定*/
+#menubar li {
+	display: inline-block;
+	margin: 0 1%;
+	animation-name: opa1;
+	animation-delay: 1S;
+	animation-duration: 1S;
+	animation-fill-mode: both;
+}
+#menubar li a {
+	text-decoration: none;display: block;text-align: center;
+	width: 140px;	/*メニューの幅*/
+	color: #fff;	/*文字色*/
+	border-bottom: 2px solid transparent;	/*下線の幅、線種、色。transparentは透明の事。*/
+	padding-bottom: 7px;	/*下線と文字の間にとる余白*/
+}
+/*マウスオン時の指定*/
+#menubar li a:hover {
+	border-bottom: 2px solid #fff;	/*下線の幅、線種、色*/
+	letter-spacing: 0.1em;			/*文字間隔を少しだけ広くする指定。そのままがいいならこの１行を削除。*/
+}
+
+
+
+/*フッター設定
+---------------------------------------------------------------------------*/
+footer {
+	clear: both;
+	text-align: center;
+	background: #222;	/*背景色*/
+	color: #fff;		/*文字色*/
+	font-size: 85%;		/*文字サイズ*/
+}
+footer a {
+	color: #fff;	/*リンクテキストの文字色*/
+	text-decoration: none;
+}
+footer a:hover {
+	color: #fff;	/*マウスオン時の文字色*/
+}
+footer .pr {
+	display: block;
+	font-size: 80%;
+}
+
+
+/*PAGE TOP（↑）設定
+---------------------------------------------------------------------------*/
+.scroll-show {display: block;}
+.scroll a {
+	display: block;text-decoration: none;text-align: center;
+	width: 50px;		/*幅*/
+	line-height: 50px;	/*高さ*/
+	position: fixed;
+	right: 30px;		/*右からの配置場所指定*/
+	bottom: 30px;		/*下からの配置場所指定*/
+	color: #fff;		/*文字色*/
+	background: rgba(0,0,0,0.4);	/*背景色。0,0,0は黒色の指定で0.4は色が40%出た状態。*/
+	border: 1px solid #fff;	/*枠線の幅、線種、色*/
+}
+/*マウスオン時*/
+.scroll a:hover {
+	background: rgba(0,0,0,0.8);	/*背景色。0,0,0は黒色の指定で0.8は色が80%出た状態。*/
+}
+
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 70%;
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
+}
+
+/*ul.disc,olタグ
+---------------------------------------------------------------------------*/
+ul.disc {
+	list-style: disc;
+	padding: 0 20px 20px 55px;
+}
+ol {
+	padding: 0 20px 20px 42px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.look {background: #fff;border: 1px solid #ccc;padding: 5px 10px;border-radius: 4px;}
+.mb15,.mb1em {margin-bottom: 15px;}
+.clear {clear: both;}
+ul.disc {padding: 0em 25px 15px 40px;list-style: disc;}
+.color1, .color1 a {color: #ff4765;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+.big1 {font-size: 40px;letter-spacing: 0.2em;}
+.mini1 {font-size: 11px;display: inline-block;line-height: 1.5;}
+.sh {display: none;}
+
+
+
+
+/*画面幅800px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:800px){
+
+/*ヘッダー（一番上の、ロゴやメニューが入っているブロック）
+---------------------------------------------------------------------------*/
+/*ロゴ画像*/
+header #logo img {
+	width: 30%;	/*画像の幅*/
+	left: 35%;	/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
+}
+
+}
+
+
+
+/*画面幅480px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px){
+
+/*ヘッダー（一番上の、ロゴやメニューが入っているブロック）
+---------------------------------------------------------------------------*/
+/*ロゴ画像*/
+header #logo img {
+	width: 50%;	/*画像の幅*/
+	left: 25%;	/*ロゴやメニューが入っているブロックに対して、左からの配置場所の指定。*/
+}
+
+/*ul.disc,olタグ
+---------------------------------------------------------------------------*/
+ul.disc {
+	padding: 0 0px 20px 35px;
+}
+ol {
+	padding: 0 0px 20px 35px;
+}
+
+/*その他
+---------------------------------------------------------------------------*/
+.ws {width: 96%;}
+.big1 {font-size: 22px;letter-spacing: normal;}
+
+}
